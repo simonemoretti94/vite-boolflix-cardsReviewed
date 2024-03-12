@@ -24,7 +24,7 @@ export const state = reactive({
 
     fetchData(url, array) {
 
-        // array = [];
+        this.loadingAPI = true;
 
         axios
             .get(url)
