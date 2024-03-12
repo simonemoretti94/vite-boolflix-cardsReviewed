@@ -17,12 +17,14 @@ export default {
 <template>
     <section>
         <div class="container">
-            <h4 v-if="state.cards">Movies:</h4>
-            <div class="row">
+            <h4 v-if="!state.cards.length == 0 && !state.FoundLoading">Movies:</h4>
+            <div class="row"
+                :class="state.cards.length % (4 || 2) !== 0 ? 'justify-content-start' : 'justify-content-center'">
                 <AppMovies></AppMovies>
             </div>
-            <h4 v-if="!state.cardsTv.length == 0">Tv:</h4>
-            <div class="row">
+            <h4 v-if="!state.cardsTv.length == 0 && !state.FoundLoading">Tv:</h4>
+            <div class="row"
+                :class="state.cardsTv.length % (4 || 2) !== 0 ? 'justify-content-start' : 'justify-content-center'">
                 <AppTv></AppTv>
             </div>
         </div>
