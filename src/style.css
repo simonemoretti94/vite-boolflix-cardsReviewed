@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --boolflix-header: #000000;
+  --boolflix-header-writing: #FF0000;
+  --boolflix-main: #434343;
+  --boolflix-main-star: #FFBD00;
+
+
+}
+
+
+body {
+  min-width: 320px;
+  background: linear-gradient(135deg, #555555, #434343, #232323);
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 -1rem;
+}
