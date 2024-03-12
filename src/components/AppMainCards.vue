@@ -17,12 +17,12 @@ export default {
 <template>
     <section>
         <div class="container">
-            <h4 v-if="!state.cards.length == 0 && !state.FoundLoading">Movies:</h4>
+            <h4 v-if="!state.cards.length == 0 || !state.FoundLoading">Movies:</h4>
             <div class="row"
                 :class="state.cards.length % (4 || 2) !== 0 ? 'justify-content-start' : 'justify-content-center'">
                 <AppMovies></AppMovies>
             </div>
-            <h4 v-if="!state.cardsTv.length == 0 && !state.FoundLoading">Tv:</h4>
+            <h4 v-if="!state.cardsTv.length == 0 || !state.FoundLoading">Tv:</h4>
             <div class="row"
                 :class="state.cardsTv.length % (4 || 2) !== 0 ? 'justify-content-start' : 'justify-content-center'">
                 <AppTv></AppTv>
@@ -51,6 +51,14 @@ export default {
     .row {
         margin-bottom: .5rem;
     }
+}
+
+.justify-content-start {
+    justify-content: start;
+}
+
+.justify-content-center {
+    justify-content: center;
 }
 
 @media screen and (min-width: 768px) {
